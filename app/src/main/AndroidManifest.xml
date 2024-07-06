@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -10,6 +10,7 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:name=".MovieApp"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RetoFinancieraOh"
@@ -20,13 +21,19 @@
             android:value="YOUR_API_KEY" />
 
         <activity
-            android:name=".ui.PaymentActivity"
+            android:name=".ui.Activities.PaymentActivity"
             android:exported="false" />
+
         <activity
-            android:name=".ui.CandyStoreActivity"
+            android:name=".ui.Activities.CandyStoreActivity"
             android:exported="false" />
+
         <activity
-            android:name=".ui.LoginActivity"
+            android:name=".ui.Activities.LoginActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.view.HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,9 +41,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ui.HomeActivity"
-            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="false">

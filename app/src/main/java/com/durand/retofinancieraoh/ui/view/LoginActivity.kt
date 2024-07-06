@@ -1,11 +1,10 @@
-package com.durand.retofinancieraoh.ui
+package com.durand.retofinancieraoh.ui.Activities
 
 import android.content.ContentValues.TAG
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.IntentSenderRequest

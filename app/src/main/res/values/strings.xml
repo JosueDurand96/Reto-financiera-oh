@@ -3,4 +3,5 @@
     <string name="title_activity_maps">MapsActivity</string>
     <string name="default_web_client_id">790109933384-vpfc109lhqsgsktiphub7hqsssfev82r.apps.googleusercontent.com</string>
     <string name="login_google">Login Google</string>
+    <string name="todo">todo</string>
 </resources>
