@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "790109933384",
+    "project_id": "financiera-oh-prueba",
+    "storage_bucket": "financiera-oh-prueba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:790109933384:android:5c4d464e944e9309b92d7d",
+        "android_client_info": {
+          "package_name": "com.durand.retofinancieraoh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "790109933384-vpfc109lhqsgsktiphub7hqsssfev82r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.durand.retofinancieraoh",
+            "certificate_hash": "9ba056537ab3c6ff56e06459b98cb5075f5f5dd8"
+          }
+        },
+        {
+          "client_id": "790109933384-kpmmoac6eatd9ghto385go8ivaplfs7u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtwKdhHDzRyQHm3UbAKnjwsJ9f4dOSe0c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "790109933384-kpmmoac6eatd9ghto385go8ivaplfs7u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
