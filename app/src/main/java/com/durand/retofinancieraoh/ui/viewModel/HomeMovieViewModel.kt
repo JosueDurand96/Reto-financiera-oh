@@ -1,13 +1,12 @@
 package com.durand.retofinancieraoh.ui.viewModel
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.durand.retofinancieraoh.data.model.MovieMasterResponse
 import com.durand.retofinancieraoh.domain.GetMovieUseCase
-import com.durand.retofinancieraoh.domain.model.Movie
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -16,21 +15,19 @@ class HomeMovieViewModel @Inject constructor(
     private val getQuotesUseCase: GetMovieUseCase,
 ) : ViewModel() {
 
-    val quoteModel = MutableLiveData<Movie>()
+    val quoteModel = MutableLiveData<MovieMasterResponse>()
     val isLoading = MutableLiveData<Boolean>()
 
-
     fun onCreate() {
-
-            viewModelScope.launch {
-                isLoading.postValue(true)
-                val result = getQuotesUseCase()
-                if (!result.isNullOrEmpty()) {
-                    quoteModel.postValue(result[0])
-                    isLoading.postValue(false)
-                }
+        Log.d("josue", "onCreate: ")
+        viewModelScope.launch {
+            isLoading.postValue(true)
+            val result = getQuotesUseCase()
+            if (result.data.isNotEmpty()) {
+                quoteModel.postValue(result)
+                isLoading.postValue(false)
             }
-
+        }
     }
 
 }

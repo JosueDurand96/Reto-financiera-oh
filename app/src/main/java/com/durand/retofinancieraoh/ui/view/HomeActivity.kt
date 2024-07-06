@@ -9,15 +9,10 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.Observer
 import com.durand.retofinancieraoh.R
-import com.durand.retofinancieraoh.core.RetrofitHelper
-import com.durand.retofinancieraoh.data.model.MovieModel
-import com.durand.retofinancieraoh.data.model.MovieListModel
+import com.durand.retofinancieraoh.data.model.MovieResponse
 import com.durand.retofinancieraoh.databinding.ActivityHomeBinding
 import com.durand.retofinancieraoh.ui.viewModel.HomeMovieViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 @AndroidEntryPoint
 class HomeActivity : AppCompatActivity() {
@@ -28,21 +23,25 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_home)
+        binding = ActivityHomeBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        //quoteViewModel.onCreate()
-//        quoteViewModel.quoteModel.observe(this, Observer {
-//            Log.d("josue", "it.image")
-//            Log.d("josue", it.image)
-//        })
-
-
+        quoteViewModel.onCreate()
+        quoteViewModel.quoteModel.observe(this, Observer {
+            showBanner(it.data)
+        })
     }
 
-    private fun showData(data: List<MovieModel>){
+    private fun showBanner(data: List<MovieResponse>) {
+        for (i in data) {
+            Log.d("josue", "image: " + i.image)
+            Log.d("josue", "name: " + i.name)
+        }
+        binding.movieViewPager2
     }
+
 }
