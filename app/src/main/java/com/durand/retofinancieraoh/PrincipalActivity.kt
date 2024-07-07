@@ -28,6 +28,7 @@ class PrincipalActivity : AppCompatActivity() {
 
         val toolbar: Toolbar = findViewById(R.id.my_toolbar)
         setSupportActionBar(toolbar)
+        toolbar.visibility = View.GONE
 
         val navView: BottomNavigationView = binding.navView
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_principal) as NavHostFragment

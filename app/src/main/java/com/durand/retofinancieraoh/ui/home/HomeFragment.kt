@@ -140,6 +140,8 @@ class HomeFragment : Fragment() {
     }
 
     override fun onDestroyView() {
+        handler.removeCallbacks(runnable)
+        binding.movieViewPager2.unregisterOnPageChangeCallback(pageChangeListener)
         super.onDestroyView()
         _binding = null
     }
