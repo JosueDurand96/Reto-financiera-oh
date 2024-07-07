@@ -73,14 +73,23 @@ class HomeActivity : AppCompatActivity() {
         homeMovieViewModel.movieModel.observe(this) {
             showMovieDefault(it.data)
             binding.movieProgressBar.visibility = View.GONE
+            binding.categoryProgressBar.visibility = View.GONE
+            binding.nextMovieProgressBar.visibility = View.GONE
         }
     }
 
     private fun showMovieDefault(data: List<PeliMovieResponse>) {
         Log.d("josue", "showMovieDefault")
         Log.d("josue", "title: $data")
+        // Movie
         binding.movieRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         binding.movieRecyclerView.adapter = MovieRecyclerAdapter(data, this)
+        // Category
+        binding.categoryRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        binding.categoryRecyclerView.adapter = MovieRecyclerAdapter(data, this)
+        // Next Movie
+        binding.nextMovieRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        binding.nextMovieRecyclerView.adapter = MovieRecyclerAdapter(data, this)
     }
 
 
