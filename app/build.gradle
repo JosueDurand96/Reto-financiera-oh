@@ -60,6 +60,10 @@ dependencies {
     //retrofit
     implementation libs.retrofit.converter.gson
     implementation libs.retrofit
+    //RxJava
+    implementation libs.adapter.rxjava
+    implementation libs.rxJava
+    implementation libs.rxAndroid
     //ViewModel
     implementation libs.view.model
     //liveData
@@ -71,6 +75,8 @@ dependencies {
     //Dagger hilt
     kapt libs.hilt.compiler
     implementation libs.dagger.hilt
+    //Glide
+    implementation libs.glide
 
     implementation libs.multidex
     testImplementation libs.junit

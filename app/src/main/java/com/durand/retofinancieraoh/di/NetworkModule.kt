@@ -1,6 +1,5 @@
 package com.durand.retofinancieraoh.di
 
-import com.durand.retofinancieraoh.core.RetrofitHelper
 import com.durand.retofinancieraoh.data.network.MovieApiClient
 import dagger.Module
 import dagger.Provides

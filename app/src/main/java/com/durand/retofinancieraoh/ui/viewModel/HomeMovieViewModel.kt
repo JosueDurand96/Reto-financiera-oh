@@ -4,30 +4,50 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.durand.retofinancieraoh.data.model.MovieMasterResponse
+import com.durand.retofinancieraoh.data.model.MovieResponse
+import com.durand.retofinancieraoh.data.repository.MovieRepository
+import com.durand.retofinancieraoh.data.response.banner.BannerMovieMasterResponse
+import com.durand.retofinancieraoh.data.response.peli.MovieMasterResponse
+import com.durand.retofinancieraoh.domain.GetBannerMovieUseCase
 import com.durand.retofinancieraoh.domain.GetMovieUseCase
+import com.durand.retofinancieraoh.domain.GetPeliUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class HomeMovieViewModel @Inject constructor(
-    private val getQuotesUseCase: GetMovieUseCase,
+    private val getBannerMovieUseCase: GetBannerMovieUseCase,
+    private val getPeliUseCase: GetPeliUseCase,
 ) : ViewModel() {
 
-    val quoteModel = MutableLiveData<MovieMasterResponse>()
+    val bannerModel = MutableLiveData<BannerMovieMasterResponse>()
+    val movieModel = MutableLiveData<MovieMasterResponse>()
     val isLoading = MutableLiveData<Boolean>()
 
-    fun onCreate() {
-        Log.d("josue", "onCreate: ")
+    fun showBanner() {
+        Log.d("josue", "showBanner: ")
         viewModelScope.launch {
             isLoading.postValue(true)
-            val result = getQuotesUseCase()
+            val result = getBannerMovieUseCase()
             if (result.data.isNotEmpty()) {
-                quoteModel.postValue(result)
+                bannerModel.postValue(result)
                 isLoading.postValue(false)
             }
         }
     }
+
+    fun showPeli() {
+        Log.d("josue", "showPeli: ")
+        viewModelScope.launch {
+            isLoading.postValue(true)
+            val result = getPeliUseCase()
+            if (result.data.isNotEmpty()) {
+                movieModel.postValue(result)
+                isLoading.postValue(false)
+            }
+        }
+    }
+
 
 }
