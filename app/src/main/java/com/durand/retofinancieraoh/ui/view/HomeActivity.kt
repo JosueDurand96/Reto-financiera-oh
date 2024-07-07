@@ -3,7 +3,6 @@ package com.durand.retofinancieraoh.ui.view
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -12,22 +11,16 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.lifecycle.Observer
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.durand.retofinancieraoh.R
-import com.durand.retofinancieraoh.data.model.MovieResponse
 import com.durand.retofinancieraoh.data.response.banner.BannerMovieResponse
-import com.durand.retofinancieraoh.data.response.peli.MovieMasterResponse
 import com.durand.retofinancieraoh.data.response.peli.PeliMovieResponse
 import com.durand.retofinancieraoh.databinding.ActivityHomeBinding
 import com.durand.retofinancieraoh.ui.adapter.BannerViewPagerAdapter
 import com.durand.retofinancieraoh.ui.adapter.MovieRecyclerAdapter
 import com.durand.retofinancieraoh.ui.viewModel.HomeMovieViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
-import retrofit2.Call
 
 @AndroidEntryPoint
 class HomeActivity : AppCompatActivity() {
@@ -79,19 +72,19 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun showMovieDefault(data: List<PeliMovieResponse>) {
-        Log.d("josue", "showMovieDefault")
-        Log.d("josue", "title: $data")
         // Movie
-        binding.movieRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        binding.movieRecyclerView.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         binding.movieRecyclerView.adapter = MovieRecyclerAdapter(data, this)
         // Category
-        binding.categoryRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        binding.categoryRecyclerView.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         binding.categoryRecyclerView.adapter = MovieRecyclerAdapter(data, this)
         // Next Movie
-        binding.nextMovieRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        binding.nextMovieRecyclerView.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         binding.nextMovieRecyclerView.adapter = MovieRecyclerAdapter(data, this)
     }
-
 
     private fun showBanner(data: List<BannerMovieResponse>) {
         val adapter = BannerViewPagerAdapter(data, this)

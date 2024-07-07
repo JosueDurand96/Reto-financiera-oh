@@ -25,7 +25,7 @@
             android:exported="false" />
 
         <activity
-            android:name=".ui.Activities.CandyStoreActivity"
+            android:name=".ui.view.CandyStoreActivity"
             android:exported="false" />
 
         <activity

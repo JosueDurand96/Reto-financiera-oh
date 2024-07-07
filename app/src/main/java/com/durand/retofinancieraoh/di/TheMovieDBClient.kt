@@ -1,7 +1,7 @@
 package com.durand.retofinancieraoh.di
 
-import com.durand.retofinancieraoh.Constant.API_KEY
-import com.durand.retofinancieraoh.Constant.BASE_URL
+import com.durand.retofinancieraoh.util.Constant.API_KEY
+import com.durand.retofinancieraoh.util.Constant.BASE_URL
 import com.durand.retofinancieraoh.data.network.TheMovieDBInterface
 import dagger.Module
 import dagger.Provides

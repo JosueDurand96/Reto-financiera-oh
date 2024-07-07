@@ -1,4 +1,4 @@
-package com.durand.retofinancieraoh.ui.Activities
+package com.durand.retofinancieraoh.ui.view
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge

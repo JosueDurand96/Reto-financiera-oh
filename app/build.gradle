@@ -72,6 +72,8 @@ dependencies {
     implementation libs.androidx.fragment
     //Coroutines
     implementation libs.coroutines
+    implementation libs.androidx.navigation.fragment.ktx
+    implementation libs.androidx.navigation.ui.ktx
     //Dagger hilt
     kapt libs.hilt.compiler
     implementation libs.dagger.hilt
