@@ -1,6 +1,7 @@
 package com.durand.retofinancieraoh.ui.candy
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -43,6 +44,7 @@ class CandyStoreFragment : Fragment() {
     }
 
     private fun showCandyStore(data: List<CandyResponse>) {
+        Log.d("josue", data.toString())
         binding.candyRecyclerView.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         binding.candyRecyclerView.adapter = CandyRecyclerAdapter(data, requireContext())

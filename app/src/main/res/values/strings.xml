@@ -9,4 +9,10 @@
     <string name="title_dashboard">confitería</string>
     <string name="title_notifications">Cine</string>
     <string name="title_activity_principal">Activity Principal</string>
+    <string name="location_text_candy_store">Lima - Cinemark Megaplaza</string>
+    <string name="combo_duo_vaso_cmk">combo duo vaso cmk</string>
+    <string name="s_79_90">S/ 79.90</string>
+    <string name="description_item_candy_store">1 Vaso Gigante Minions con gaseosa + 1 Gaseosa Chica + 1 Crismelo Mashmelo</string>
+    <string name="confiteria_regular">CONFITERIA REGULAR</string>
+    <string name="zero">0</string>
 </resources>
