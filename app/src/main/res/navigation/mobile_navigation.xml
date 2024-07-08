@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.durand.retofinancieraoh.ui.home.HomeFragment"
+        android:name="com.durand.retofinancieraoh.ui.view.fragments.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.durand.retofinancieraoh.ui.candy.CandyStoreFragment"
+        android:name="com.durand.retofinancieraoh.ui.view.fragments.candy.CandyStoreFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.durand.retofinancieraoh.ui.location.LocationFragment"
+        android:name="com.durand.retofinancieraoh.ui.view.fragments.location.LocationFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
 </navigation>

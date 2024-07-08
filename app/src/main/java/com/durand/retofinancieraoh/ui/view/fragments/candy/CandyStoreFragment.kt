@@ -1,4 +1,4 @@
-package com.durand.retofinancieraoh.ui.candy
+package com.durand.retofinancieraoh.ui.view.fragments.candy
 
 import android.os.Bundle
 import android.util.Log

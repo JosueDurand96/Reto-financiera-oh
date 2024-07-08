@@ -1,4 +1,4 @@
-package com.durand.retofinancieraoh.ui.Activities
+package com.durand.retofinancieraoh.ui.view.fragments.activities
 
 import android.content.ContentValues.TAG
 import android.graphics.Bitmap

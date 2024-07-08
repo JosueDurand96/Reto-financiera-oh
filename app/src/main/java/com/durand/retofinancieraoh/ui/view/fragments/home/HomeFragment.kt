@@ -1,4 +1,4 @@
-package com.durand.retofinancieraoh.ui.home
+package com.durand.retofinancieraoh.ui.view.fragments.home
 
 import android.os.Bundle
 import android.os.Handler

@@ -1,4 +1,4 @@
-package com.durand.retofinancieraoh.ui.location
+package com.durand.retofinancieraoh.ui.view.fragments.location
 
 import android.os.Bundle
 import android.view.LayoutInflater
