@@ -1,13 +1,15 @@
-package com.durand.retofinancieraoh.ui.view.fragments.home
+package com.durand.retofinancieraoh.ui.view.fragments.movie
 
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,16 +20,18 @@ import com.durand.retofinancieraoh.data.response.peli.PeliMovieResponse
 import com.durand.retofinancieraoh.databinding.FragmentHomeBinding
 import com.durand.retofinancieraoh.ui.adapter.BannerViewPagerAdapter
 import com.durand.retofinancieraoh.ui.adapter.MovieRecyclerAdapter
+import com.durand.retofinancieraoh.ui.view.MyBottomSheetDialogFragment
 import com.durand.retofinancieraoh.ui.viewModel.HomeMovieViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : Fragment() {
+class MovieFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private val homeMovieViewModel: HomeMovieViewModel by viewModels()
     private lateinit var pageChangeListener: ViewPager2.OnPageChangeCallback
     private val handler = Handler(Looper.getMainLooper())
+    private var listMovieAdapter: MovieRecyclerAdapter? = null
 
     private val runnable = object : Runnable {
         override fun run() {
@@ -79,19 +83,45 @@ class HomeFragment : Fragment() {
         }
     }
 
+    private fun showBottomSheet(title: String) {
+        val bottomSheet = MyBottomSheetDialogFragment()
+        bottomSheet.show(childFragmentManager, "MyBottomSheet")
+    }
+
     private fun showMovieDefault(data: List<PeliMovieResponse>) {
         // Movie
-        binding.movieRecyclerView.layoutManager =
-            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        binding.movieRecyclerView.adapter = MovieRecyclerAdapter(data, requireContext())
+        listMovieAdapter = MovieRecyclerAdapter(data, requireContext())
+        binding.movieRecyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        binding.movieRecyclerView.adapter = listMovieAdapter
+
+        listMovieAdapter?.setListenerItemSelected(object :
+            MovieRecyclerAdapter.OnClickSelectedMovie {
+            override fun onSelectCardBuying(title: String) {
+                Log.d("josue", title)
+                Toast.makeText(requireContext(), title, Toast.LENGTH_SHORT).show()
+            }
+        })
+
         // Category
-        binding.categoryRecyclerView.layoutManager =
-            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        binding.categoryRecyclerView.adapter = MovieRecyclerAdapter(data, requireContext())
+        binding.categoryRecyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        binding.categoryRecyclerView.adapter = listMovieAdapter
+        listMovieAdapter?.setListenerItemSelected(object :
+            MovieRecyclerAdapter.OnClickSelectedMovie {
+            override fun onSelectCardBuying(title: String) {
+                Log.d("josue", title)
+                Toast.makeText(requireContext(), title, Toast.LENGTH_SHORT).show()
+            }
+        })
         // Next Movie
-        binding.nextMovieRecyclerView.layoutManager =
-            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        binding.nextMovieRecyclerView.adapter = MovieRecyclerAdapter(data, requireContext())
+        binding.nextMovieRecyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        binding.categoryRecyclerView.adapter = listMovieAdapter
+        listMovieAdapter?.setListenerItemSelected(object :
+            MovieRecyclerAdapter.OnClickSelectedMovie {
+            override fun onSelectCardBuying(title: String) {
+                Log.d("josue", title)
+                Toast.makeText(requireContext(), title, Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 
 
