@@ -1,4 +1,4 @@
-package com.durand.retofinancieraoh.ui.view.fragments.activities
+package com.durand.retofinancieraoh.ui.view.activities
 
 import android.os.Bundle
 import android.view.View

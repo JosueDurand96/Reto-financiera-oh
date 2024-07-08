@@ -10,16 +10,16 @@ import javax.inject.Inject
 
 class BannerService @Inject constructor(private val api: MovieApiClient) {
 
-    suspend fun getMovie(): BannerMovieMasterResponse {
+    suspend fun getBanner(): BannerMovieMasterResponse {
         return withContext(Dispatchers.IO) {
-            val response = api.getAllMovie()
+            val response = api.getAllBanner()
             return@withContext response.body()!!
         }
     }
 
-    suspend fun getPeli(): MovieMasterResponse {
+    suspend fun getMovie(): MovieMasterResponse {
         return withContext(Dispatchers.IO) {
-            val response = api.getAllPelis()
+            val response = api.getAllMovie()
             return@withContext response.body()!!
         }
     }

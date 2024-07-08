@@ -8,10 +8,10 @@ import retrofit2.http.GET
 
 interface MovieApiClient {
     @GET("api/movie/getAll")
-    suspend fun getAllMovie(): Response<BannerMovieMasterResponse>
+    suspend fun getAllBanner(): Response<BannerMovieMasterResponse>
 
     @GET("api/peli/getAll")
-    suspend fun getAllPelis(): Response<MovieMasterResponse>
+    suspend fun getAllMovie(): Response<MovieMasterResponse>
 
     @GET("api/candy/getAll")
     suspend fun getCandy(): Response<CandyMasterResponse>

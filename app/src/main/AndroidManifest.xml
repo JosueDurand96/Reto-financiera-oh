@@ -16,7 +16,7 @@
         android:theme="@style/Theme.RetoFinancieraOh"
         tools:targetApi="31" >
         <activity
-            android:name=".ui.view.fragments.activities.PrincipalActivity"
+            android:name=".ui.view.activities.PrincipalActivity"
             android:exported="true"
             android:label="@string/title_activity_principal" >
             <intent-filter>
@@ -29,22 +29,8 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="YOUR_API_KEY" />
-
         <activity
-            android:name=".ui.view.fragments.activities.PaymentActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.view.fragments.activities.CandyStoreActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.view.fragments.activities.LoginActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.view.fragments.activities.HomeActivity"
-            android:exported="false" >
-        </activity>
-        <activity
-            android:name=".ui.view.fragments.activities.MainActivity"
+            android:name=".ui.view.activities.MainActivity"
             android:exported="false" >
         </activity>
     </application>

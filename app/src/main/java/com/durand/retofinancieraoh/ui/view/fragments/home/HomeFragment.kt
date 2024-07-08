@@ -8,11 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
-import android.widget.TextView
-import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.durand.retofinancieraoh.R
@@ -23,7 +20,6 @@ import com.durand.retofinancieraoh.ui.adapter.BannerViewPagerAdapter
 import com.durand.retofinancieraoh.ui.adapter.MovieRecyclerAdapter
 import com.durand.retofinancieraoh.ui.viewModel.HomeMovieViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
@@ -74,7 +70,7 @@ class HomeFragment : Fragment() {
         homeMovieViewModel.bannerModel.observe(viewLifecycleOwner) {
             showBanner(it.data)
         }
-        homeMovieViewModel.showPeli()
+        homeMovieViewModel.showMovie()
         homeMovieViewModel.movieModel.observe(viewLifecycleOwner) {
             showMovieDefault(it.data)
             binding.movieProgressBar.visibility = View.GONE

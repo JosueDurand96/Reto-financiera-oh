@@ -7,7 +7,7 @@ import javax.inject.Inject
 class GetCandyUseCase @Inject constructor(private val repository: CandyRepository) {
 
     suspend operator fun invoke(): CandyMasterResponse {
-        val peli = repository.getCandyFromApi()
-        return peli
+        val candy = repository.getCandyFromApi()
+        return candy
     }
 }

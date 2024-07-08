@@ -7,7 +7,7 @@ import javax.inject.Inject
 class GetBannerMovieUseCase @Inject constructor(private val repository: BannerMovieRepository) {
 
     suspend operator fun invoke(): BannerMovieMasterResponse {
-        val quotes = repository.getAllQuotesFromApi()
-        return quotes
+        val banner = repository.getAllQuotesFromApi()
+        return banner
     }
 }
