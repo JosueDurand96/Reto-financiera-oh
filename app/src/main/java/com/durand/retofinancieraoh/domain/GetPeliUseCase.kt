@@ -1,8 +1,6 @@
 package com.durand.retofinancieraoh.domain
 
-import com.durand.retofinancieraoh.data.repository.BannerMovieRepository
 import com.durand.retofinancieraoh.data.repository.PeliRepository
-import com.durand.retofinancieraoh.data.response.banner.BannerMovieMasterResponse
 import com.durand.retofinancieraoh.data.response.peli.MovieMasterResponse
 import javax.inject.Inject
 
